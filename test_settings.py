@@ -1,7 +1,11 @@
-DATABASE_ENGINE = 'sqlite3'
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3', 
+    }
+}
 
 INSTALLED_APPS = [
-    'profile',
+    'userprofile',
 ]
 
-AUTH_PROFILE_MODULE = 'profile.Profile'
+USER_PROFILE_MODULE = 'userprofile.Profile'

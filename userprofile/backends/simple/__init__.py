@@ -4,7 +4,7 @@ from django.utils.translation import ugettext
 from registration import signals
 from registration.backends.simple import SimpleBackend
 
-from profile import utils
+from userprofile import utils
 
 
 class SimpleBackend(SimpleBackend):

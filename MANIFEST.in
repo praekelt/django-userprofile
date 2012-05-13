@@ -2,7 +2,7 @@ include AUTHORS.rst
 include CHANGELOG.rst
 include LICENSE
 include README.rst
-recursive-include profile/backends *
-recursive-include profile/fixtures *
-recursive-include profile/templates *
-recursive-include profile/templatetags *
+recursive-include userprofile/backends *
+recursive-include userprofile/fixtures *
+recursive-include userprofile/templates *
+recursive-include userprofile/templatetags *

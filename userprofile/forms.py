@@ -4,14 +4,14 @@ from django import forms
 from django.forms import ModelForm
 from django.utils.translation import ugettext_lazy as _
 
-from profile.models import AbstractAvatarProfile, AbstractProfileBase, \
+from userprofile.models import AbstractAvatarProfile, AbstractProfileBase, \
         AbstractLocationProfile, AbstractContactProfile, \
         AbstractPersonalProfile, AbstractSubscriptionProfile
 
 from registration.forms import RegistrationForm
 
 from datetime import datetime
-from profile import utils
+from userprofile import utils
 from django.contrib.auth.models import User
 
 

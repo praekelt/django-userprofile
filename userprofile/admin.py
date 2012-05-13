@@ -1,8 +1,7 @@
 from django.contrib import admin
 from django.contrib.auth.models import User
 from django.contrib.auth.admin import UserAdmin
-
-from profile import utils
+from userprofile import utils
 
 # add profile inline to user admin
 profile_model = utils.get_profile_model()

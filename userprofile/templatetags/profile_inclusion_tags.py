@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 register = template.Library()
 
 
-@register.inclusion_tag('profile/inclusion_tags/avatar.html')
+@register.inclusion_tag('userprofile/inclusion_tags/avatar.html')
 def avatar(username, width, height):
     try:
         profile = User.objects.get(username=username).profile
