@@ -24,15 +24,17 @@ class SimpleBackend(SimpleBackend):
         then users absolute url.
         """
         if 'next' in request.session:
-            next = request.session['next']
+            next_url = request.session['next']
             del request.session['next']
-            return next
         elif 'next' in request.GET:
-            return request.GET.get('next')
+            next_url = request.GET.get('next')
         elif 'next' in request.POST:
-            return request.POST.get('next')
+            next_url = request.POST.get('next')
         else:
-            return request.user.get_absolute_url()
+            next_url = request.user.get_absolute_url()
+        if not next_url:
+            next_url = '/'
+        return next_url
 
 
 def user_registered(sender, user, request, *args, **kwargs):
