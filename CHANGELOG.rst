@@ -1,6 +1,10 @@
 Changelog
 =========
 
+0.0.6 (2012-05-29)
+------------------
+#. After user registered populate profile and user fields from form cleaned data instead of raw POST data.
+
 0.0.5 (2012-05-14)
 ------------------
 #. One or two small correction and more additions for rename.

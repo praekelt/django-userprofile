@@ -39,11 +39,18 @@ class SimpleBackend(SimpleBackend):
 
 def user_registered(sender, user, request, *args, **kwargs):
     profile = user.profile
-    for field in request.POST:
+    
+    # Build from from post
+    form = utils.get_profile_model().registration_form(request.POST)
+    # Username causes clean to fail, remove it.
+    del form.fields['username']
+    form.full_clean()
+    # Assign cleaned values to user or profile objects.
+    for field, value in form.cleaned_data.items():
         if hasattr(user, field):
-            setattr(user, field, request.POST.get(field))
+            setattr(user, field, value)
         if hasattr(profile, field):
-            setattr(profile, field, request.POST.get(field))
+            setattr(profile, field, value)
 
     user.save()
     profile.save()
